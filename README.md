@@ -172,6 +172,15 @@ The ESP32 is a Modbus TCP server at `192.168.0.150:502` (static IP, set in `Conf
 
 The limit registers (4 to 7) let the HMI read its validation bounds from the controller instead of hard-coding them. Incoming writes outside the allowed range are rejected and the controller republishes its current valid values.
 
+### UI
+
+<p align="center">
+  <img src="docs/images/diagrams/hmi/hmi1.png" width="32%" alt="Flow Chart 1">
+  <img src="docs/images/diagrams/hmi/hmi2.png" width="32%" alt="Flow Chart 2">
+  <img src="docs/images/diagrams/hmi/hmi3.png" width="32%" alt="Flow Chart 3">
+  <img src="docs/images/diagrams/hmi/hmi4.png" width="32%" alt="Flow Chart 4">
+</p>
+
 ## Safety
 
 The system switches 220 V and 800 W into water, so protection is layered: hardware that works with no software at all, and firmware that assumes the sensor, the network or the operator can fail.
