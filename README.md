@@ -175,8 +175,6 @@ The limit registers (4 to 7) let the HMI read its validation bounds from the con
 ### UI
 
 ![UI1](docs/images/hmi/hmi1.png)
-![UI2](docs/images/hmi/hmi2.png)
-![UI3](docs/images/hmi/hmi3.png)
 
 ## Safety
 
