@@ -174,12 +174,10 @@ The limit registers (4 to 7) let the HMI read its validation bounds from the con
 
 ### UI
 
-<p align="center">
-  <img src="docs/images/hmi/hmi1.png" width="32%" alt="Flow Chart 1">
-  <img src="docs/images/hmi/hmi2.png" width="32%" alt="Flow Chart 2">
-  <img src="docs/images/hmi/hmi3.png" width="32%" alt="Flow Chart 3">
-  <img src="docs/images/hmi/hmi4.png" width="32%" alt="Flow Chart 4">
-</p>
+![UI1](docs/images/hmi/hmi1.png)
+![UI2](docs/images/hmi/hmi2.png)
+![UI3](docs/images/hmi/hmi3.png)
+![UI4](docs/images/hmi/hmi4.png)
 
 ## Safety
 
