@@ -45,6 +45,46 @@ The full tuning campaign, including the runs that failed and why, is in [Tuning 
 
 The loop computes `e = SP - T` every 2 s. The PID output (0 to 100 %) passes through an Auto/Manual selector and is converted to an ON time within a 2 s window (`ON time = out % x 2 s`) that gates the SSR. A safety monitor runs on the same 2 s tick and forces all outputs off on a fault. The HMI never touches the outputs directly; it only writes commands and settings, which the firmware validates before applying.
 
+## System Workflow & Control Logic
+
+The system operates based on a clear, state-driven control loop ensuring high precision, real-time response, and safety execution:
+
+<p align="center">
+  <img src="docs/images/diagrams/flow_chart_1.png" width="32%" alt="Flow Chart 1">
+  <img src="docs/images/diagrams/flow_chart_2.png" width="32%" alt="Flow Chart 2">
+  <img src="docs/images/diagrams/flow_chart_3.png" width="32%" alt="Flow Chart 3">
+</p>
+
+### 1. System Initialization
+1. **System Setup Start**: System boots and initializes input/output pins.[cite: 1]
+2. **Hardware & Communication Setup**: Initializes temperature sensors, relays, and Modbus RTU/TCP protocols.[cite: 1]
+3. **Load Stored Settings**: Restores previously saved PID control parameters and system limits.[cite: 1]
+4. **Operation Mode Decision**: Checks the current operation mode: **Automatic** or **Manual**.[cite: 1]
+
+---
+
+### 2. Automatic Control Mode (PID Regulation)
+* **Temperature Reading**: Reads current real-time water temperature from the sensors.[cite: 1]
+* **Safety Check**: Evaluates for faults or overheating conditions.[cite: 2]
+  * **Status: OK**: Calculates necessary duty cycle via **PID Control Algorithm**.[cite: 2]
+  * **Status: Fault / Overheat**: Automatically disables the heater and triggers an immediate safety alarm.[cite: 2]
+* **Actuator Adjustment**: Dynamically adjusts heater Duty Cycle (PWM/SSR) and pump states.[cite: 2]
+* **Network Sync**: Synchronizes system telemetry across Modbus and network interfaces.[cite: 2, 3]
+
+---
+
+### 3. Manual Control Mode
+* **Direct Control**: Allows operators to manually trigger the heater and pump via direct inputs.[cite: 2]
+* **Safety Monitor Check**: Maintains continuous background safety monitoring.[cite: 2]
+  * **Status: OK**: Proceeds directly to output status printing.[cite: 2, 3]
+  * **Status: Fault**: Overrides manual commands, disables the heater, and triggers the alarm system.[cite: 2, 3]
+
+---
+
+### 4. Status Logging & Loop Refresh
+* **Print Status**: Outputs system state and diagnostic logging.[cite: 3]
+* **Wait Cycle**: Introduces controlled execution delay before repeating the next decision loop.[cite: 3]
+
 ## Hardware
 
 ### Bill of materials
