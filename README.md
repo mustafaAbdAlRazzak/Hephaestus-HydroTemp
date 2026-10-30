@@ -277,25 +277,6 @@ Credentials in this repository are placeholders. Do not commit real Wi-Fi creden
 - **Heating only.** The plant has no active cooling, so overshoot is corrected only by heat loss; this shaped the tuning and limits how fast the loop can recover.
 - **Planned:** data logging and trend plotting, auto-tune, communication watchdog, and a setpoint-ramp feature to avoid the large integral build-up on big steps.
 
-## Repository structure
-
-```
-Hephaestus-HydroTemp/
-|-- README.md
-|-- LICENSE
-|-- firmware/
-|   `-- WaterHeaterPID/        ESP32 firmware (Arduino sketch and modules)
-`-- docs/
-    `-- images/
-        |-- diagrams/          Block diagram and wiring diagram
-        |-- tuning/            Logged step responses for each tuning run
-        `-- hardware/          Photos of the built panel and test tank
-```
-
-## License
-
-Released under the [MIT License](LICENSE).
-
 ## Author
 
 Mostafa
