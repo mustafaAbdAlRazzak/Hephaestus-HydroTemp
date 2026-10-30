@@ -319,4 +319,7 @@ Credentials in this repository are placeholders. Do not commit real Wi-Fi creden
 
 ## Author
 
-Mostafa
+Name: Mostafa Abdel Razzak
+Email: mustafaabdalrazzak2002101@gmail.com
+
+You can reach out for any questions, collaborations, or feedback regarding this project.
