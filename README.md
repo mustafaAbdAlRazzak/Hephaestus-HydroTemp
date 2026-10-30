@@ -41,7 +41,7 @@ The full tuning campaign, including the runs that failed and why, is in [Tuning 
 
 ## System architecture
 
-![Block diagram](docs/images/diagrams/block-diagram.svg)
+![Block diagram](docs/images/diagrams/block-diagram.png)
 
 The loop computes `e = SP - T` every 2 s. The PID output (0 to 100 %) passes through an Auto/Manual selector and is converted to an ON time within a 2 s window (`ON time = out % x 2 s`) that gates the SSR. A safety monitor runs on the same 2 s tick and forces all outputs off on a fault. The HMI never touches the outputs directly; it only writes commands and settings, which the firmware validates before applying.
 
