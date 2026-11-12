@@ -143,7 +143,7 @@ The firmware lives in [`firmware/WaterHeaterPID`](firmware/WaterHeaterPID) and i
 
 ### Control strategy
 
-- PID from the PID_v1 library: proportional on error, derivative on measurement (no derivative kick on setpoint changes), integral term clamped to the output limits
+- PID from the PID_v1 library
 - Output limited to 0-100 % and sample time set to 2 s
 - Converted to heater ON time inside a 2 s window, so the effective heating power is `out % x 800 W` on average
 - Run, stop and Manual mode are commanded by Modbus coils; in Manual mode the output is taken directly from a holding register
