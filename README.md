@@ -218,11 +218,11 @@ With the error `e(t) = SP - y(t)`, where `y(t)` is the measured water temperatur
   <img src="docs/images/equations/eq01.png" alt="Equation 1" width="442">
 </p>
 
-| Term | Meaning | Unit of the gain |
-|---|---|---|
-| Proportional, `Kp e(t)` | Reacts to the present error | % per °C |
-| Integral, `Ki ∫e dτ` | Accumulates past error, removes steady-state offset | % per (°C·s) |
-| Derivative, `Kd de/dt` | Reacts to the rate of change, anticipates the trend | %·s per °C |
+| Term | Meaning |
+|---|---|
+| Proportional, `Kp e(t)` | Reacts to the present error |
+| Integral, `Ki ∫e dτ` | Accumulates past error, removes steady-state offset |
+| Derivative, `Kd de/dt` | Reacts to the rate of change, anticipates the trend |
 
 ### 2. Sampling
 
